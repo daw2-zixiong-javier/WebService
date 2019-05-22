@@ -1,0 +1,92 @@
+0    [main] DEBUG org.apache.cxf.common.logging.LogUtils  - Using org.apache.cxf.common.logging.Log4jLogger for logging.
+291  [main] DEBUG org.apache.cxf.resource.DefaultResourceManager  - resolving resource <org.apache.cxf.transport.http.asyncclient.AsyncHTTPConduitFactory/bus> type <interface org.apache.cxf.Bus>
+292  [main] DEBUG org.apache.cxf.resource.DefaultResourceManager  - resolving resource <null> type <interface org.apache.cxf.Bus>
+408  [main] INFO  org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean  - Creating Service {http://ss.ttdev.com/}p1ImplService from class com.ttdev.ss.SimpleService
+766  [main] DEBUG org.apache.cxf.jaxb.JAXBDataBinding  - Created JAXBContext "jar:file:/C:/Users/ALE/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar!/com/sun/xml/bind/v2/runtime/JAXBContextImpl.class Build-Id: 2.1.13
+Classes known to this context:
+  [B
+  boolean
+  byte
+  char
+  com.sun.xml.bind.api.CompositeStructure
+  com.ttdev.ss.Concat
+  com.ttdev.ss.ConcatResponse
+  double
+  float
+  int
+  java.awt.Image
+  java.io.File
+  java.lang.Boolean
+  java.lang.Byte
+  java.lang.Character
+  java.lang.Class
+  java.lang.Double
+  java.lang.Float
+  java.lang.Integer
+  java.lang.Long
+  java.lang.Object
+  java.lang.Short
+  java.lang.String
+  java.lang.Void
+  java.math.BigDecimal
+  java.math.BigInteger
+  java.net.URI
+  java.net.URL
+  java.util.Calendar
+  java.util.Date
+  java.util.GregorianCalendar
+  java.util.UUID
+  javax.activation.DataHandler
+  javax.xml.bind.JAXBElement
+  javax.xml.datatype.Duration
+  javax.xml.datatype.XMLGregorianCalendar
+  javax.xml.namespace.QName
+  javax.xml.transform.Source
+  long
+  short
+  void
+" with classes [class com.ttdev.ss.Concat, class com.ttdev.ss.ConcatResponse, class com.ttdev.ss.ObjectFactory].
+1033 [main] DEBUG org.apache.cxf.resource.DefaultResourceManager  - resolving resource <org.apache.cxf.wsdl11.WSDLManagerImpl/bus> type <interface org.apache.cxf.Bus>
+1033 [main] DEBUG org.apache.cxf.resource.DefaultResourceManager  - resolving resource <null> type <interface org.apache.cxf.Bus>
+1381 [main] DEBUG org.apache.cxf.transport.http_jetty.JettyHTTPServerEngineFactory  - Creating Jetty HTTP Server Engine for port 8081.
+1391 [main] DEBUG org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine  - Configured port 8081 for "http".
+1391 [main] INFO  org.apache.cxf.endpoint.ServerImpl  - Setting the server's publish address to be http://localhost:8081/DAW2_SOAP/NewsModifier?wsdl
+1408 [main] DEBUG org.apache.cxf.jaxws.handler.AnnotationHandlerChainBuilder  - building handler chain
+1408 [main] DEBUG org.apache.cxf.jaxws.handler.AnnotationHandlerChainBuilder  - Checking for HandlerChain annotation on com.ttdev.ss.p1Impl
+1408 [main] DEBUG org.apache.cxf.jaxws.handler.AnnotationHandlerChainBuilder  - Checking for HandlerChain annotation on com.ttdev.ss.SimpleService
+1408 [main] DEBUG org.apache.cxf.jaxws.handler.AnnotationHandlerChainBuilder  - Checking for HandlerChain annotation on java.lang.Object
+1408 [main] DEBUG org.apache.cxf.jaxws.handler.AnnotationHandlerChainBuilder  - no HandlerChain annotation on class com.ttdev.ss.p1Impl
+1409 [main] DEBUG org.apache.cxf.endpoint.ServerImpl  - Server is starting.
+1409 [main] DEBUG org.apache.cxf.transport.http_jetty.JettyHTTPDestination  - registering incoming observer: org.apache.cxf.transport.ChainInitiationObserver@1a75e76a
+1411 [main] DEBUG org.apache.cxf.transport.http_jetty.JettyHTTPDestination  - Activating receipt of incoming messages
+1423 [main] DEBUG org.eclipse.jetty.util.log  - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+1463 [main] DEBUG org.eclipse.jetty.util.component.Container  - Container org.eclipse.jetty.server.Server@1040be71 + SelectChannelConnector@localhost:8081 as connector
+1473 [main] DEBUG org.eclipse.jetty.util.component.Container  - Container org.eclipse.jetty.server.Server@1040be71 + org.eclipse.jetty.server.handler.ContextHandlerCollection@6b695b06 as handler
+1473 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting org.eclipse.jetty.server.Server@1040be71
+1477 [main] INFO  org.eclipse.jetty.server.Server  - jetty-8.1.14.v20131031
+1505 [main] DEBUG org.eclipse.jetty.util.component.Container  - Container org.eclipse.jetty.server.Server@1040be71 + qtp361268035{8<=0<=0/254,-1} as threadpool
+1505 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting org.eclipse.jetty.server.handler.ContextHandlerCollection@6b695b06
+1509 [main] DEBUG org.eclipse.jetty.server.handler.AbstractHandler  - starting org.eclipse.jetty.server.handler.ContextHandlerCollection@6b695b06
+1509 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED org.eclipse.jetty.server.handler.ContextHandlerCollection@6b695b06
+1509 [main] DEBUG org.eclipse.jetty.server.handler.AbstractHandler  - starting org.eclipse.jetty.server.Server@1040be71
+1509 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting qtp361268035{8<=0<=0/254,-1}
+1513 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED qtp361268035{8<=6<=8/254,0}
+1513 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting SelectChannelConnector@localhost:8081
+1545 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting null/null
+1548 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+1549 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@7b4c50bc
+2099 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@7b4c50bc
+2100 [qtp361268035-21 Selector1] DEBUG org.eclipse.jetty.io.nio  - Starting Thread[qtp361268035-21 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@74b93193
+2100 [qtp361268035-14 Selector0] DEBUG org.eclipse.jetty.io.nio  - Starting Thread[qtp361268035-14 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@6d4689de
+2100 [main] INFO  org.eclipse.jetty.server.AbstractConnector  - Started SelectChannelConnector@localhost:8081
+2101 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED SelectChannelConnector@localhost:8081
+2101 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED org.eclipse.jetty.server.Server@1040be71
+2105 [main] DEBUG org.eclipse.jetty.util.component.Container  - Container o.e.j.s.h.ContextHandler{/DAW2_SOAP,null} + org.apache.cxf.transport.http_jetty.JettyHTTPHandler@1a5b6f42 as handler
+2105 [main] DEBUG org.eclipse.jetty.util.component.Container  - Container org.eclipse.jetty.server.handler.ContextHandlerCollection@6b695b06 + o.e.j.s.h.ContextHandler{/DAW2_SOAP,null} as handler
+2105 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting o.e.j.s.h.ContextHandler{/DAW2_SOAP,null}
+2122 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - starting org.apache.cxf.transport.http_jetty.JettyHTTPHandler@1a5b6f42
+2122 [main] DEBUG org.eclipse.jetty.server.handler.AbstractHandler  - starting org.apache.cxf.transport.http_jetty.JettyHTTPHandler@1a5b6f42
+2122 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED org.apache.cxf.transport.http_jetty.JettyHTTPHandler@1a5b6f42
+2122 [main] DEBUG org.eclipse.jetty.server.handler.AbstractHandler  - starting o.e.j.s.h.ContextHandler{/DAW2_SOAP,null}
+2122 [main] DEBUG org.eclipse.jetty.util.component.AbstractLifeCycle  - STARTED o.e.j.s.h.ContextHandler{/DAW2_SOAP,null}
+2122 [main] DEBUG org.apache.cxf.endpoint.ServerImpl  - register the server to serverRegistry 
