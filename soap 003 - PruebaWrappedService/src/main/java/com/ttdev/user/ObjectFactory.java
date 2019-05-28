@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.6 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: PM.05.19 a las 12:04:33 PM BST 
+// Generado el: PM.05.28 a las 12:33:25 PM BST 
 //
 
 
@@ -45,59 +45,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping }
+     * Create an instance of {@link Usuario.User }
      * 
      */
-    public Usuario.RdfMapping createUsuarioRdfMapping() {
-        return new Usuario.RdfMapping();
+    public Usuario.User createUsuarioUser() {
+        return new Usuario.User();
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping.Homepage }
+     * Create an instance of {@link Usuario.User.RdfMapping }
      * 
      */
-    public Usuario.RdfMapping.Homepage createUsuarioRdfMappingHomepage() {
-        return new Usuario.RdfMapping.Homepage();
+    public Usuario.User.RdfMapping createUsuarioUserRdfMapping() {
+        return new Usuario.User.RdfMapping();
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping.Name }
+     * Create an instance of {@link Usuario.User.RdfMapping.Homepage }
      * 
      */
-    public Usuario.RdfMapping.Name createUsuarioRdfMappingName() {
-        return new Usuario.RdfMapping.Name();
+    public Usuario.User.RdfMapping.Homepage createUsuarioUserRdfMappingHomepage() {
+        return new Usuario.User.RdfMapping.Homepage();
     }
 
     /**
-     * Create an instance of {@link Usuario.Roles }
+     * Create an instance of {@link Usuario.User.RdfMapping.Name }
      * 
      */
-    public Usuario.Roles createUsuarioRoles() {
-        return new Usuario.Roles();
+    public Usuario.User.RdfMapping.Name createUsuarioUserRdfMappingName() {
+        return new Usuario.User.RdfMapping.Name();
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping.Rdftype }
+     * Create an instance of {@link Usuario.User.Roles }
      * 
      */
-    public Usuario.RdfMapping.Rdftype createUsuarioRdfMappingRdftype() {
-        return new Usuario.RdfMapping.Rdftype();
+    public Usuario.User.Roles createUsuarioUserRoles() {
+        return new Usuario.User.Roles();
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping.Homepage.Predicates }
+     * Create an instance of {@link Usuario.User.RdfMapping.Rdftype }
      * 
      */
-    public Usuario.RdfMapping.Homepage.Predicates createUsuarioRdfMappingHomepagePredicates() {
-        return new Usuario.RdfMapping.Homepage.Predicates();
+    public Usuario.User.RdfMapping.Rdftype createUsuarioUserRdfMappingRdftype() {
+        return new Usuario.User.RdfMapping.Rdftype();
     }
 
     /**
-     * Create an instance of {@link Usuario.RdfMapping.Name.Predicates }
+     * Create an instance of {@link Usuario.User.RdfMapping.Homepage.Predicates }
      * 
      */
-    public Usuario.RdfMapping.Name.Predicates createUsuarioRdfMappingNamePredicates() {
-        return new Usuario.RdfMapping.Name.Predicates();
+    public Usuario.User.RdfMapping.Homepage.Predicates createUsuarioUserRdfMappingHomepagePredicates() {
+        return new Usuario.User.RdfMapping.Homepage.Predicates();
+    }
+
+    /**
+     * Create an instance of {@link Usuario.User.RdfMapping.Name.Predicates }
+     * 
+     */
+    public Usuario.User.RdfMapping.Name.Predicates createUsuarioUserRdfMappingNamePredicates() {
+        return new Usuario.User.RdfMapping.Name.Predicates();
     }
 
 }

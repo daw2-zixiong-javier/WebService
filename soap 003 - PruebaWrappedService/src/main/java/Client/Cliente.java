@@ -42,7 +42,7 @@ public class Cliente {
 			System.out.println();
 			try {
 				// Get - Drupal Post Content Type
-			client = WebClient.create("http://dev-quardexa.pantheonsite.io/restful");
+			client = WebClient.create("http://localhost/docroot/restful");
 		    	client.accept("application/xml");
 		    	client.path("node/" + postId);
 				post = client.get(Prueba.class);
@@ -76,24 +76,28 @@ public class Cliente {
 		// Log In
 		client.back(true);
 		client.path("user/login");
-		client.header("x-CSRF-Token", token.getToken());
+		client.header("X-CSRF-Token", token.getToken());
 		Form form = new Form();
 		form.set("username", "test");
 		form.set("password", "test");
+                
 		// System.out.println(form);
 		Usuario usuario = client.type(MediaType.APPLICATION_FORM_URLENCODED).post(form, Usuario.class);
-                // System.out.println(usuario.getName());
+                
+                form = new Form();
+                form.set("title","titulo de prueba");
 		// Prepare Put - Drupal Post Content Type
 		client.back(true);
 		client.path("node/"+postId);
 		
+                
 		// Prepare Put - Building headers
-		client.header("cookie", usuario.getName()+ "=" + usuario.getLogin());
-		client.replaceHeader("X-CSRF-Token", "iVJ2leHTWUgJjHs_GQEcEqtjnMq5l-Yr6IEidDw3a1s");
+		client.header("cookie", usuario.getUser().getName() + "=" + usuario.getToken());
+		client.replaceHeader("X-CSRF-Token", usuario.getToken());
 		
 		// Put - Send petition
-		Response resp = client.type(MediaType.APPLICATION_FORM_URLENCODED).delete();
-                String title = post.getTitle();
+		String resp = client.type(MediaType.APPLICATION_FORM_URLENCODED).put(form,String.class);
+                //String title = post.getTitle();
                 
               
                 //System.out.println();
@@ -103,11 +107,11 @@ public class Cliente {
 
 		// Log Out
 		client.back(true);
-		//client.path("user/logout");
-		//client.post(null, String.class);
+		client.path("user/logout");
+//		client.post(null, String.class);
 		
 		System.out.println();
-		System.out.println("	Código de respuesta = " + resp.getStatus());
+		//System.out.println("	Código de respuesta = " + resp.getStatus());
 		System.out.println();
 
     }
