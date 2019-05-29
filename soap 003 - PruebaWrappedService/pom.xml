@@ -52,5 +52,11 @@
   		<version>2.7.18</version>
   	 <type>jar</type>
   	</dependency>
-  </dependencies>
+        <dependency>
+            <groupId>com.ttdev</groupId>
+            <artifactId>ss</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

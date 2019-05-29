@@ -1,4 +1,4 @@
-package com.ttdev.ss;
+package ss;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

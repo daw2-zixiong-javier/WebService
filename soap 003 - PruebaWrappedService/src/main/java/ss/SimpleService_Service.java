@@ -1,5 +1,6 @@
-package com.ttdev.ss;
+package ss;
 
+import com.ttdev.ss.SimpleService;
 import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.WebEndpoint;

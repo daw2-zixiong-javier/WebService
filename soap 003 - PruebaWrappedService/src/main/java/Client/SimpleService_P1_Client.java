@@ -1,14 +1,17 @@
 
-package com.ttdev.ss;
+package Client;
 
 /**
  * Please modify this class to meet your needs
  * This class is not complete
  */
 
+import com.ttdev.ss.SimpleService;
+import ss.SimpleService_Service;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 import javax.xml.namespace.QName;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -29,7 +32,7 @@ public final class SimpleService_P1_Client {
     
     private static final QName SERVICE_NAME = new QName("http://ttdev.com/ss", "SimpleService");
 
-    private SimpleService_P1_Client() {
+    public SimpleService_P1_Client() {
     }
 
     public static void main(String args[]) throws java.lang.Exception {
@@ -61,6 +64,14 @@ public final class SimpleService_P1_Client {
         }
 
         System.exit(0);
+    }
+
+    public String modifyDrupalTitle(String toModifyTile) {
+        
+        Scanner s = new Scanner(System.in);
+        System.out.println("Nuevo titulo: ");
+        
+        return s.nextLine();
     }
 
 }

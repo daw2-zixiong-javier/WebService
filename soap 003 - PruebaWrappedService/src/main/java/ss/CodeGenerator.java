@@ -12,10 +12,10 @@ public class CodeGenerator {
 
 		System.setProperty("javax.xml.accessExternalSchema", "all");
 		XJCFacade.main(new String[]{
-				"-b","src/main/resources/user-binding.xml",
-				"-p", "com.ttdev.user",
+				"-b","src/main/resources/token-binding.xml",
+				"-p", "com.ttdev.token",
 				"-d", "src/main/java",
-				"src/main/resources/user.xsd"
+				"src/main/resources/token.xsd"
 		});
 		
 		System.out.println("Terminado correctamente.");

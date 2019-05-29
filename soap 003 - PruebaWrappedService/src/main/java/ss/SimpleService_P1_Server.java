@@ -1,6 +1,7 @@
 
-package com.ttdev.ss;
+package ss;
 
+import ss.p1Impl;
 import javax.xml.ws.Endpoint;
 
 /**

@@ -1,5 +1,5 @@
 
-package com.ttdev.ss;
+package ss;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

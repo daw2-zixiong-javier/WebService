@@ -5,14 +5,19 @@
  */
 package Client;
 
-import com.ttdev.Prueba.Prueba;
-import com.ttdev.token.Token;
-import com.ttdev.user.Usuario;
-import java.util.Scanner;
+import ss.SoapAsyncRequest;
+import com.ttdev.Prueba.*;
+//import com.ttdev.ss.SimpleService_Service;
+import com.ttdev.token.*;
+import com.ttdev.user.*;
+
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.cxf.jaxrs.ext.form.Form;
+
+import java.util.*;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -23,97 +28,102 @@ public class Cliente {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         // TODO code application logic here
         		// Rest Client Preparation
+		// Rest Client Preparation
 		WebClient client = null;
 		
 		// Keyboard Input
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("	--- DELETE Post ---");
-		System.out.println("	-------------------");
+		System.out.println("	--- Title Changer ---");
+		System.out.println("	---------------------");
 		System.out.println();
 		boolean existPath = false;
+		String toModifyTile = "";
+                Prueba post = new Prueba();
 		int postId;
-		Prueba post = new Prueba();
 		do {
-			System.out.print("	Introduzca un ID de un contenido tipo Post: ");
+			System.out.print("	Introduzca un ID de un contenido tipo Post que quiera modificar: ");
 			postId = keyboard.nextInt();
 			System.out.println();
 			try {
 				// Get - Drupal Post Content Type
-			client = WebClient.create("http://localhost/docroot/restful");
-		    	client.accept("application/xml");
-		    	client.path("node/" + postId);
+				client = WebClient.create("http://localhost/docroot/restful");
+                            client.accept("application/xml");
+                            client.path("node/" + postId);
 				post = client.get(Prueba.class);
-                                System.out.println(post.getType());
 				if (post.getType().equalsIgnoreCase("noticia")) {
+					toModifyTile = post.getTitle();
 					existPath = true;
-					System.out.println("	¿Está seguro que desea eliminar '" + post.getTitle() + "'? (1/0)");
-					int confirm =keyboard.nextInt();
-					if(confirm == 0) {
-						return;
-					}
 				} else {
-					System.out.println("	Introduce un ID de un contenido tipo Post:");
+					System.out.println("	Introduce un ID de un contenido tipo Post.");
 					System.out.println();
 					existPath = false;
 				}
-			} catch (javax.ws.rs.NotFoundException e) {
+			} catch (Exception e) {
 				System.out.println("	Introduce un ID de un contenido tipo Post existente.");
 				System.out.println();
 				existPath = false;
 			}
 		} while (!existPath);
-            
-
+		
+		// Soap Server Call - Converting title string
+		
+		// Async Petition
+		SoapAsyncRequest soapCall = new SoapAsyncRequest(toModifyTile);
+		soapCall.start();                
+                
+                
 		// Get Token
 		client.back(true);
 		client.path("user/token");
 		Token token = client.type(MediaType.APPLICATION_FORM_URLENCODED).post(null, Token.class);
-                //System.out.println(token);
 
 		// Log In
 		client.back(true);
 		client.path("user/login");
-		client.header("X-CSRF-Token", token.getToken());
+		client.header("x-CSRF-Token", token.getToken());
+		
 		Form form = new Form();
 		form.set("username", "test");
 		form.set("password", "test");
-                
-		// System.out.println(form);
+		
 		Usuario usuario = client.type(MediaType.APPLICATION_FORM_URLENCODED).post(form, Usuario.class);
-                
-                form = new Form();
-                form.set("title","titulo de prueba");
+
 		// Prepare Put - Drupal Post Content Type
 		client.back(true);
 		client.path("node/"+postId);
-		
                 
+                //System.out.println(post.getTitle());
+		// Prepare Put - Building body
+		form = new Form();
+		
+                try {
+			soapCall.join(); // wait for async request if needed
+		} catch (InterruptedException e) {}
+                
+		String soapResponse = soapCall.getModifiedTitle();
+                
+                form.set("title",soapResponse);
 		// Prepare Put - Building headers
-		client.header("cookie", usuario.getUser().getName() + "=" + usuario.getToken());
-		client.replaceHeader("X-CSRF-Token", usuario.getToken());
+		client.header("cookie", usuario.getSessionName() + "=" + usuario.getSessid());
+		client.header("X-CSRF-Token", usuario.getToken());
 		
 		// Put - Send petition
-		String resp = client.type(MediaType.APPLICATION_FORM_URLENCODED).put(form,String.class);
-                //String title = post.getTitle();
+		String resp = client.type(MediaType.APPLICATION_FORM_URLENCODED).post(form, String.class);
                 
-              
-                //System.out.println();
-		//System.out.println("	Código de respuesta = " + resp.getStatus());
-		//System.out.println();
-
-
 		// Log Out
 		client.back(true);
 		client.path("user/logout");
-//		client.post(null, String.class);
+		//client.post(null, String.class);
 		
 		System.out.println();
-		//System.out.println("	Código de respuesta = " + resp.getStatus());
+		System.out.println("	¡Título Cambiado!");
+		System.out.println("	Original = " + toModifyTile);
+		System.out.println("	Modificado = " + soapResponse);
 		System.out.println();
-
     }
     
 }
